@@ -1,47 +1,66 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>BeaconForge Solutions</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #0f172a;
-      color: white;
-      text-align: center;
-    }
-    .hero {
-      padding: 80px 20px;
-    }
-    h1 {
-      font-size: 48px;
-      margin-bottom: 10px;
-    }
-    p {
-      font-size: 20px;
-      color: #cbd5f5;
-    }
-    .btn {
-      margin-top: 20px;
-      padding: 12px 24px;
-      background: orange;
-      color: black;
-      text-decoration: none;
-      border-radius: 8px;
-      font-weight: bold;
-    }
-  </style>
-</head>
-<body>
+export default function BeaconForgeSolutionsHomepage() {
+  return (
+    <div className="min-h-screen bg-slate-950 text-white text-center">
+      <div className="pt-16">
+        <img
+          src="/logo.png"
+          alt="BeaconForge Solutions Logo"
+          className="mx-auto mb-8 w-40"
+        />
 
-<div class="hero">
-  <h1>BeaconForge Solutions</h1>
-  <p>Strategy. Systems. Execution.</p>
-  <p>We help organizations turn ideas into results.</p>
+        <h1 className="text-5xl font-bold mb-4">
+          BeaconForge Solutions
+        </h1>
 
-  <a class="btn" href="mailto:your@email.com">Contact Us</a>
-</div>
+        <p className="text-xl text-slate-300 mb-2">
+          Strategy. Systems. Execution.
+        </p>
 
-</body>
-</html>
+        <p className="text-lg text-slate-400 mb-6 max-w-xl mx-auto">
+          BeaconForge Solutions helps colleges, universities, and mission-driven organizations strengthen strategy, improve operations, and build programs that drive results.
+        </p>
+
+        <a
+          href="mailto:beaconforgesolutions@gmail.com"
+          className="bg-orange-500 text-black px-6 py-3 rounded-lg font-semibold hover:opacity-90"
+        >
+          Contact Us
+        </a>
+      </div>
+
+      <div className="mt-20 px-6">
+        <h2 className="text-3xl font-semibold mb-6">What We Do</h2>
+
+        <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto text-left">
+          <div className="bg-white/5 p-6 rounded-xl">
+            <h3 className="font-semibold text-lg mb-2">Higher Education Consulting</h3>
+            <p className="text-slate-300 text-sm">
+              Strategic support for colleges and universities navigating growth, change, and performance improvement.
+            </p>
+          </div>
+
+          <div className="bg-white/5 p-6 rounded-xl">
+            <h3 className="font-semibold text-lg mb-2">Strategic Planning & Program Development</h3>
+            <p className="text-slate-300 text-sm">
+              Build and implement initiatives that are aligned, measurable, and built for long-term success.
+            </p>
+          </div>
+
+          <div className="bg-white/5 p-6 rounded-xl">
+            <h3 className="font-semibold text-lg mb-2">Operational & Student Success Solutions</h3>
+            <p className="text-slate-300 text-sm">
+              Improve systems, workflows, and student outcomes through practical, execution-focused solutions.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div className="mt-20 pb-16">
+        <p className="text-slate-400 text-sm">
+          © {new Date().getFullYear()} BeaconForge Solutions
+        </p>
+      </div>
+    </div>
+  );
+}
+
