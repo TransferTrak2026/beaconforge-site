@@ -9,99 +9,136 @@
 html { scroll-behavior: smooth; }
 
 body {
-  margin:0;
+  margin: 0;
   font-family: Arial, sans-serif;
-  background:#07142d;
-  color:white;
+  background: #07142d;
+  color: white;
 }
 
 .wrap {
-  width:90%;
-  max-width:1100px;
-  margin:auto;
+  width: 90%;
+  max-width: 1100px;
+  margin: auto;
 }
 
 .nav {
-  position:sticky;
-  top:0;
-  background:#07142d;
-  padding:15px 0;
+  position: sticky;
+  top: 0;
+  background: #07142d;
+  padding: 15px 0;
+  z-index: 1000;
 }
 
 .nav-inner {
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .nav-links a {
-  margin-left:20px;
-  color:#ccc;
+  margin-left: 20px;
+  color: #ccc;
+  text-decoration: none;
 }
 
 .nav-links a:hover {
-  color:white;
+  color: white;
 }
 
 .nav-cta {
-  background:#f59e0b;
-  padding:10px 15px;
-  border-radius:20px;
-  color:black;
-  font-weight:bold;
+  background: #f59e0b;
+  padding: 10px 15px;
+  border-radius: 20px;
+  color: black;
+  font-weight: bold;
 }
 
 .hero {
-  padding:60px 0;
+  padding: 60px 0;
 }
 
 .btn-primary {
-  background:#f59e0b;
-  padding:12px 20px;
-  border-radius:20px;
-  color:black;
-  font-weight:bold;
+  background: #f59e0b;
+  padding: 12px 20px;
+  border-radius: 20px;
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
 }
 
 .btn-secondary {
-  border:1px solid white;
-  padding:12px 20px;
-  border-radius:20px;
+  border: 1px solid white;
+  padding: 12px 20px;
+  border-radius: 20px;
+  color: white;
+  text-decoration: none;
 }
 
 section {
-  padding:50px 0;
-  scroll-margin-top:100px;
+  padding: 50px 0;
+  scroll-margin-top: 100px;
 }
 
 .card {
-  background:rgba(255,255,255,0.05);
-  padding:20px;
-  border-radius:15px;
+  background: rgba(255,255,255,0.05);
+  padding: 20px;
+  border-radius: 15px;
 }
 
 .services {
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:20px;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 20px;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.bio-name {
+  margin-bottom: 8px;
 }
 
 #contact form input,
 #contact form textarea {
-  width:100%;
-  padding:12px;
-  margin-bottom:12px;
-  border-radius:10px;
-  border:none;
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 12px;
+  border-radius: 10px;
+  border: none;
+  box-sizing: border-box;
 }
 
 #contact form button {
-  background:#f59e0b;
-  padding:12px;
-  border:none;
-  border-radius:10px;
-  font-weight:bold;
-  cursor:pointer;
+  background: #f59e0b;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#contact a {
+  color: #f59e0b;
+}
+
+@media (max-width: 768px) {
+  .services,
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .nav-inner {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .nav-links a {
+    margin: 0 10px;
+  }
 }
 </style>
 </head>
@@ -110,9 +147,10 @@ section {
 
 <header class="nav">
   <div class="wrap nav-inner">
-    <img src="logo.png" style="width:150px;">
+    <img src="logo.png" style="width:150px;" alt="BeaconForge Solutions Logo">
 
     <nav class="nav-links">
+      <a href="#about">About</a>
       <a href="#services">Services</a>
       <a href="#approach">Approach</a>
       <a href="#contact">Contact</a>
@@ -127,7 +165,7 @@ section {
   <div class="wrap">
     <h1>Higher education consulting built to move good ideas into action.</h1>
     <p>
-      BeaconForge Solutions helps colleges, universities, and mission-driven organizations 
+      BeaconForge Solutions helps colleges, universities, and mission-driven organizations
       strengthen strategy, improve operations, and build programs that drive results.
     </p>
 
@@ -138,11 +176,87 @@ section {
   </div>
 </section>
 
+<section id="about">
+  <div class="wrap">
+    <h2>About</h2>
+    <p>
+      BeaconForge Solutions brings together deep experience in higher education, student success,
+      workforce development, strategic planning, and program execution. We help institutions and
+      organizations move from ideas to implementation with practical, results-oriented support.
+    </p>
+
+    <div class="about-grid">
+      <div class="card">
+        <h3 class="bio-name">Jamaal Jackson, EdD</h3>
+        <p>
+          Jamaal Jackson is a transformational leader with more than 20 years of experience across
+          higher education, intercollegiate athletics, and institutional leadership. His career spans
+          coaching, teaching, and administration across multiple institutions, providing a comprehensive
+          understanding of how to drive performance, build systems, and lead organizations through change.
+        </p>
+        <p>
+          A proven strategist and builder, Jamaal has generated over $1 million in funding through grants,
+          partnerships, and external engagement efforts. His leadership is defined by his ability to
+          translate vision into execution—developing programs, strengthening operations, and creating
+          sustainable pathways that improve student success and organizational outcomes.
+        </p>
+        <p>
+          Jamaal’s work focuses on designing scalable solutions that align education with workforce needs
+          while enhancing institutional effectiveness. He has presented and consulted nationally and
+          internationally on student success, leadership development, and program innovation, and has been
+          nationally recognized and awarded for his contributions to higher education.
+        </p>
+        <p>
+          He holds a Doctor of Education in Adult and Higher Education Leadership from Morehead State
+          University, a Master of Public Administration in Human Resource Management and a Bachelor of Arts
+          in Physical Education from Kentucky State University, and a Master of Arts in Teaching in Physical
+          Education from the University of West Alabama. He is a trained fundraiser through the NCAA
+          Foundations of Fundraising Program delivered by the Indiana University Lilly Family School of
+          Philanthropy. Jamaal is also a Higher Education Leadership Foundation Fellow, an American
+          Association of State Colleges and Universities Emerging Leader, and holds certification in
+          Diversity, Equity, and Inclusion in the Workplace from the University of South Florida Muma
+          College of Business.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3 class="bio-name">Mary Jackson</h3>
+        <p>
+          Mary Jackson is a higher education professional and trained practitioner with more than a decade
+          of experience advancing student success, workforce development, and institutional effectiveness.
+          Her work focuses on building stronger connections between education and employment, ensuring that
+          students are prepared to succeed in today’s evolving workforce.
+        </p>
+        <p>
+          She brings experience across enrollment management, scholarship programming, college access, and
+          student success initiatives, as well as service as a faculty member. She leads and supports
+          initiatives that strengthen career services, employer engagement, and workforce alignment across
+          institutions.
+        </p>
+        <p>
+          Mary is known for her ability to turn strategy into action—designing and supporting initiatives
+          that are practical, scalable, and results-oriented. She has experience working across institutions
+          and stakeholder groups to improve systems, enhance collaboration, and expand opportunities for
+          students.
+        </p>
+        <p>
+          Her work is grounded in a commitment to access, equity, and outcomes, with a focus on ensuring
+          students not only enroll and persist, but graduate with clear pathways to meaningful careers.
+        </p>
+        <p>
+          She holds a Bachelor of Arts in Communication from Berea College and a Master of Music from
+          Eastern Kentucky University.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="services">
   <div class="wrap">
     <h2>What We Do</h2>
     <p>
-      BeaconForge Solutions supports institutions and organizations that need 
+      BeaconForge Solutions supports institutions and organizations that need
       strategic direction, stronger systems, and practical implementation support.
     </p>
 
@@ -169,8 +283,8 @@ section {
   <div class="wrap">
     <h2>Our Approach</h2>
     <p>
-      We combine strategic clarity with hands-on execution. 
-      That means helping leaders define priorities, build structure, 
+      We combine strategic clarity with hands-on execution.
+      That means helping leaders define priorities, build structure,
       and move initiatives forward in a way that creates real impact.
     </p>
   </div>
@@ -181,27 +295,20 @@ section {
     <h2>Start the Conversation</h2>
 
     <form action="https://formspree.io/f/xreonzlr" method="POST">
-
       <input type="text" name="name" placeholder="Your Name" required>
-
       <input type="email" name="email" placeholder="Your Email" required>
-
       <input type="text" name="subject" placeholder="Subject">
-
       <textarea name="message" rows="5" placeholder="How can we help?" required></textarea>
-
       <input type="hidden" name="_subject" value="New BeaconForge Inquiry">
-
       <button type="submit">Send Message</button>
     </form>
 
     <p style="margin-top:20px;">
-      Or email us directly: 
+      Or email us directly:
       <a href="mailto:beaconforgesolutions@gmail.com">
         beaconforgesolutions@gmail.com
       </a>
     </p>
-
   </div>
 </section>
 
