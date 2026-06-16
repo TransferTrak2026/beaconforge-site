@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,7 +7,9 @@
 <title>BeaconForge Solutions</title>
 
 <style>
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   margin: 0;
@@ -49,7 +52,7 @@ body {
   background: #f59e0b;
   padding: 10px 15px;
   border-radius: 20px;
-  color: black;
+  color: black !important;
   font-weight: bold;
 }
 
@@ -64,6 +67,7 @@ body {
   color: black;
   font-weight: bold;
   text-decoration: none;
+  display: inline-block;
 }
 
 .btn-secondary {
@@ -72,6 +76,8 @@ body {
   border-radius: 20px;
   color: white;
   text-decoration: none;
+  display: inline-block;
+  margin-left: 10px;
 }
 
 section {
@@ -80,14 +86,14 @@ section {
 }
 
 .card {
-  background: rgba(255,255,255,0.05);
+  background: rgba(255, 255, 255, 0.05);
   padding: 20px;
   border-radius: 15px;
 }
 
 .services {
   display: grid;
-  grid-template-columns: repeat(3,1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
 }
 
@@ -110,11 +116,12 @@ section {
   border-radius: 10px;
   border: none;
   box-sizing: border-box;
+  font-family: Arial, sans-serif;
 }
 
 #contact form button {
   background: #f59e0b;
-  padding: 12px;
+  padding: 12px 20px;
   border: none;
   border-radius: 10px;
   font-weight: bold;
@@ -123,6 +130,20 @@ section {
 
 #contact form button:hover {
   opacity: 0.9;
+}
+
+.contact-email {
+  margin-top: 20px;
+}
+
+.contact-email a {
+  color: #f59e0b;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.contact-email a:hover {
+  text-decoration: underline;
 }
 
 @media (max-width: 768px) {
@@ -136,8 +157,18 @@ section {
     gap: 15px;
   }
 
+  .nav-links {
+    text-align: center;
+  }
+
   .nav-links a {
-    margin: 0 10px;
+    margin: 0 8px;
+    display: inline-block;
+  }
+
+  .btn-secondary {
+    margin-left: 0;
+    margin-top: 10px;
   }
 }
 </style>
@@ -147,7 +178,11 @@ section {
 
 <header class="nav">
   <div class="wrap nav-inner">
-    <img src="logo.png" style="width:150px;" alt="BeaconForge Solutions Logo">
+    <img
+      src="logo.png"
+      style="width: 150px;"
+      alt="BeaconForge Solutions Logo"
+    >
 
     <nav class="nav-links">
       <a href="#about">About</a>
@@ -164,12 +199,13 @@ section {
 <section class="hero">
   <div class="wrap">
     <h1>Higher education consulting built to move good ideas into action.</h1>
+
     <p>
       BeaconForge Solutions helps colleges, universities, and mission-driven organizations
       strengthen strategy, improve operations, and build programs that drive results.
     </p>
 
-    <div style="margin-top:20px;">
+    <div style="margin-top: 20px;">
       <a href="#contact" class="btn-primary">Contact Us</a>
       <a href="#services" class="btn-secondary">Explore Services</a>
     </div>
@@ -179,75 +215,99 @@ section {
 <section id="about">
   <div class="wrap">
     <h2>About</h2>
+
     <p>
-      BeaconForge Solutions brings together deep experience in higher education, student success,
-      workforce development, strategic planning, and program execution. We help institutions and
-      organizations move from ideas to implementation with practical, results-oriented support.
+      BeaconForge Solutions brings together deep experience in higher education,
+      student success, workforce development, strategic planning, and program
+      execution. We help institutions and organizations move from ideas to
+      implementation with practical, results-oriented support.
     </p>
 
     <div class="about-grid">
+
       <div class="card">
         <h3 class="bio-name">Jamaal Jackson, EdD</h3>
+
         <p>
-          Jamaal Jackson is a transformational leader with more than 20 years of experience across
-          higher education, intercollegiate athletics, and institutional leadership. His career spans
-          coaching, teaching, and administration across multiple institutions, providing a comprehensive
-          understanding of how to drive performance, build systems, and lead organizations through change.
+          Jamaal Jackson is a transformational leader with more than 20 years of
+          experience across higher education, intercollegiate athletics, and
+          institutional leadership. His career spans coaching, teaching, and
+          administration across multiple institutions, providing a comprehensive
+          understanding of how to drive performance, build systems, and lead
+          organizations through change.
         </p>
+
         <p>
-          A proven strategist and builder, Jamaal has generated over $1 million in funding through grants,
-          partnerships, and external engagement efforts. His leadership is defined by his ability to
-          translate vision into execution; developing programs, strengthening operations, and creating
-          sustainable pathways that improve student success and organizational outcomes.
+          A proven strategist and builder, Jamaal has generated over $1 million
+          in funding through grants, partnerships, and external engagement efforts.
+          His leadership is defined by his ability to translate vision into
+          execution; developing programs, strengthening operations, and creating
+          sustainable pathways that improve student success and organizational
+          outcomes.
         </p>
+
         <p>
-          Jamaal’s work focuses on designing scalable solutions that align education with workforce needs
-          while enhancing institutional effectiveness. He has presented and consulted nationally and
-          internationally on student success, leadership development, and program innovation, and has been
+          Jamaal’s work focuses on designing scalable solutions that align
+          education with workforce needs while enhancing institutional effectiveness.
+          He has presented and consulted nationally and internationally on student
+          success, leadership development, and program innovation, and has been
           nationally recognized and awarded for his contributions to higher education.
         </p>
+
         <p>
-          He holds a Doctor of Education in Adult and Higher Education Leadership from Morehead State
-          University, a Master of Public Administration in Human Resource Management and a Bachelor of Arts
-          in Physical Education from Kentucky State University, and a Master of Arts in Teaching in Physical
-          Education from the University of West Alabama. He is a trained fundraiser through the NCAA
-          Foundations of Fundraising Program delivered by the Indiana University Lilly Family School of
-          Philanthropy. Jamaal is also a Higher Education Leadership Foundation Fellow, an American
-          Association of State Colleges and Universities Emerging Leader, and holds certification in
-          Diversity, Equity, and Inclusion in the Workplace from the University of South Florida Muma
-          College of Business.
+          He holds a Doctor of Education in Adult and Higher Education Leadership
+          from Morehead State University, a Master of Public Administration in
+          Human Resource Management and a Bachelor of Arts in Physical Education
+          from Kentucky State University, and a Master of Arts in Teaching in
+          Physical Education from the University of West Alabama. He is a trained
+          fundraiser through the NCAA Foundations of Fundraising Program delivered
+          by the Indiana University Lilly Family School of Philanthropy. Jamaal is
+          also a Higher Education Leadership Foundation Fellow, an American
+          Association of State Colleges and Universities Emerging Leader, and holds
+          certification in Diversity, Equity, and Inclusion in the Workplace from
+          the University of South Florida Muma College of Business.
         </p>
       </div>
 
       <div class="card">
         <h3 class="bio-name">Mary Jackson</h3>
+
         <p>
-          Mary Jackson is a higher education professional and trained practitioner with two decades
-          of experience advancing student success, workforce development, and institutional effectiveness.
-          Her work focuses on building stronger connections between education and employment, ensuring that
-          students are prepared to succeed in today’s evolving workforce.
+          Mary Jackson is a higher education professional and trained practitioner
+          with two decades of experience advancing student success, workforce
+          development, and institutional effectiveness. Her work focuses on
+          building stronger connections between education and employment, ensuring
+          that students are prepared to succeed in today’s evolving workforce.
         </p>
+
         <p>
-          She brings experience across enrollment management, scholarship programming, college access, and
-          student success initiatives, as well as service as a faculty member. She leads and supports
-          initiatives that strengthen career services, employer engagement, and workforce alignment across
-          institutions.
+          She brings experience across enrollment management, scholarship
+          programming, college access, and student success initiatives, as well as
+          service as a faculty member. She leads and supports initiatives that
+          strengthen career services, employer engagement, and workforce alignment
+          across institutions.
         </p>
+
         <p>
-          Mary is known for her ability to turn strategy into action, designing and supporting initiatives
-          that are practical, scalable, and results-oriented. She has experience working across institutions
-          and stakeholder groups to improve systems, enhance collaboration, and expand opportunities for
-          students.
+          Mary is known for her ability to turn strategy into action, designing
+          and supporting initiatives that are practical, scalable, and
+          results-oriented. She has experience working across institutions and
+          stakeholder groups to improve systems, enhance collaboration, and expand
+          opportunities for students.
         </p>
+
         <p>
-          Her work is grounded in a commitment to access, equity, and outcomes, with a focus on ensuring
-          students not only enroll and persist, but graduate with clear pathways to meaningful careers.
+          Her work is grounded in a commitment to access, equity, and outcomes,
+          with a focus on ensuring students not only enroll and persist, but
+          graduate with clear pathways to meaningful careers.
         </p>
+
         <p>
-          She holds a Bachelor of Arts in Communication from Berea College and a Master of Music from
-          Eastern Kentucky University.
+          She holds a Bachelor of Arts in Communication from Berea College and a
+          Master of Music from Eastern Kentucky University.
         </p>
       </div>
+
     </div>
   </div>
 </section>
@@ -255,26 +315,35 @@ section {
 <section id="services">
   <div class="wrap">
     <h2>What We Do</h2>
+
     <p>
       BeaconForge Solutions supports institutions and organizations that need
       strategic direction, stronger systems, and practical implementation support.
     </p>
 
     <div class="services">
+
       <div class="card">
         <h3>Higher Education Consulting</h3>
-        <p>Strategic support for colleges and universities navigating growth and change.</p>
+        <p>
+          Strategic support for colleges and universities navigating growth and change.
+        </p>
       </div>
 
       <div class="card">
-        <h3>Strategic Planning & Program Development</h3>
-        <p>Build initiatives that are aligned, measurable, and sustainable.</p>
+        <h3>Strategic Planning &amp; Program Development</h3>
+        <p>
+          Build initiatives that are aligned, measurable, and sustainable.
+        </p>
       </div>
 
       <div class="card">
-        <h3>Operational & Student Success Solutions</h3>
-        <p>Improve workflows, systems, and execution across teams.</p>
+        <h3>Operational &amp; Student Success Solutions</h3>
+        <p>
+          Improve workflows, systems, and execution across teams.
+        </p>
       </div>
+
     </div>
   </div>
 </section>
@@ -282,10 +351,11 @@ section {
 <section id="approach">
   <div class="wrap">
     <h2>Our Approach</h2>
+
     <p>
-      We combine strategic clarity with hands-on execution.
-      That means helping leaders define priorities, build structure,
-      and move initiatives forward in a way that creates real impact.
+      We combine strategic clarity with hands-on execution. That means helping
+      leaders define priorities, build structure, and move initiatives forward
+      in a way that creates real impact.
     </p>
   </div>
 </section>
@@ -295,21 +365,60 @@ section {
     <h2>Start the Conversation</h2>
 
     <form action="https://formspree.io/f/xreonzlr" method="POST">
-      <input type="text" name="name" placeholder="Your Name" required>
-      <input type="email" name="email" placeholder="Your Email" required>
-      <input type="text" name="subject" placeholder="Subject">
-      <textarea name="message" rows="5" placeholder="How can we help?" required></textarea>
-      <input type="hidden" name="_subject" value="New BeaconForge Inquiry">
+      <input
+        type="text"
+        name="name"
+        placeholder="Your Name"
+        required
+      >
+
+      <input
+        type="email"
+        name="email"
+        placeholder="Your Email"
+        required
+      >
+
+      <input
+        type="text"
+        name="subject"
+        placeholder="Subject"
+      >
+
+      <textarea
+        name="message"
+        rows="5"
+        placeholder="How can we help?"
+        required
+      ></textarea>
+
+      <input
+        type="hidden"
+        name="_subject"
+        value="New BeaconForge Inquiry"
+      >
+
       <button type="submit">Send Message</button>
     </form>
+
+    <p class="contact-email">
+      Or contact us at
+      <a href="mailto:info@beaconforgesolutions.com">
+        info@beaconforgesolutions.com
+      </a>
+    </p>
   </div>
 </section>
 
 </main>
 
-<footer style="text-align:center; padding:30px;">
+<footer style="text-align: center; padding: 30px;">
   © 2026 BeaconForge Solutions
 </footer>
+
+</body>
+</html>
+```
 
 </body>
 </html>
