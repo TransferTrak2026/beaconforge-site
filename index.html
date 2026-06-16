@@ -2,72 +2,53 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
-
-  <meta
-    name="description"
-    content="BeaconForge Solutions provides higher education consulting, strategic planning, program development, and student success solutions."
-  >
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="BeaconForge Solutions provides higher education consulting, strategic planning, program development, and student success solutions.">
   <title>BeaconForge Solutions</title>
 
   <style>
     :root {
-      --navy: #07142d;
-      --navy-light: #111f3d;
-      --card: rgba(255, 255, 255, 0.06);
-      --card-border: rgba(255, 255, 255, 0.1);
-      --gold: #f59e0b;
+      --navy: #06152f;
+      --navy-dark: #041126;
+      --card: #102341;
+      --card-border: rgba(255, 255, 255, 0.12);
+      --gold: #f5a313;
       --white: #ffffff;
-      --muted: #cbd3e1;
+      --muted: #d5dbea;
     }
 
-    html {
-      scroll-behavior: smooth;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
+    html { scroll-behavior: smooth; }
+    * { box-sizing: border-box; }
 
     body {
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
       background: var(--navy);
       color: var(--white);
-      line-height: 1.65;
+      line-height: 1.55;
     }
 
-    img {
-      max-width: 100%;
-    }
+    img { max-width: 100%; }
 
     .wrap {
-      width: 90%;
-      max-width: 1120px;
+      width: min(90%, 1220px);
       margin: 0 auto;
     }
 
-    /* Navigation */
-
-    .nav {
+    .site-header {
       position: sticky;
       top: 0;
       z-index: 1000;
-      padding: 12px 0;
-      background: rgba(7, 20, 45, 0.98);
-      box-shadow: 0 2px 14px rgba(0, 0, 0, 0.25);
+      background: rgba(4, 17, 38, 0.98);
+      box-shadow: 0 2px 14px rgba(0, 0, 0, 0.3);
     }
 
-    .nav-inner {
+    .header-inner {
+      min-height: 132px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 30px;
+      gap: 36px;
     }
 
     .logo-link {
@@ -75,14 +56,22 @@
       line-height: 0;
     }
 
-    .brand-logo {
+    .logo-box {
       width: 280px;
-      height: 105px;
-      object-fit: contain;
-      display: block;
+      height: 110px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
       background: white;
-      border-radius: 8px;
-      padding: 2px;
+      border-radius: 10px;
+    }
+
+    .logo-box img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: contain;
     }
 
     .nav-links {
@@ -90,67 +79,52 @@
       align-items: center;
       justify-content: flex-end;
       flex-wrap: wrap;
-      gap: 20px;
+      gap: 42px;
     }
 
     .nav-links a {
-      color: var(--muted);
+      color: var(--white);
+      font-size: 1rem;
+      font-weight: 700;
       text-decoration: none;
-      font-weight: 600;
     }
 
-    .nav-links a:hover {
-      color: var(--white);
-    }
+    .nav-links a:hover { color: var(--gold); }
 
     .nav-links .nav-cta {
-      padding: 10px 17px;
+      padding: 14px 27px;
       border-radius: 999px;
       background: var(--gold);
       color: #111827;
       font-weight: 800;
     }
 
-    .nav-links .nav-cta:hover {
-      color: #111827;
-      opacity: 0.92;
-    }
-
-    /* Hero */
-
     .hero {
-      padding: 95px 0 85px;
-      background:
-        radial-gradient(
-          circle at top right,
-          rgba(245, 158, 11, 0.12),
-          transparent 35%
-        );
+      padding: 95px 0 105px;
+      background: radial-gradient(circle at top right, rgba(245, 163, 19, 0.12), transparent 34%);
     }
 
-    .hero-content {
-      max-width: 900px;
-    }
+    .hero-content { max-width: 950px; }
 
     .eyebrow {
       margin: 0 0 12px;
       color: var(--gold);
       font-size: 0.95rem;
       font-weight: 800;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
     }
 
     .hero h1 {
-      margin: 0 0 22px;
       max-width: 900px;
-      font-size: clamp(2.5rem, 6vw, 4.75rem);
-      line-height: 1.08;
-      letter-spacing: -0.03em;
+      margin: 0 0 24px;
+      font-size: clamp(2.8rem, 6vw, 5rem);
+      line-height: 1.05;
+      letter-spacing: -0.035em;
     }
 
     .hero p {
-      max-width: 790px;
+      max-width: 800px;
       margin: 0;
       color: var(--muted);
       font-size: 1.15rem;
@@ -159,16 +133,16 @@
     .hero-buttons {
       display: flex;
       flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 30px;
+      gap: 14px;
+      margin-top: 32px;
     }
 
     .button {
       display: inline-block;
-      padding: 13px 22px;
+      padding: 14px 24px;
       border-radius: 999px;
-      text-decoration: none;
       font-weight: 800;
+      text-decoration: none;
     }
 
     .button-primary {
@@ -177,114 +151,111 @@
     }
 
     .button-secondary {
-      border: 1px solid rgba(255, 255, 255, 0.65);
+      border: 1px solid rgba(255, 255, 255, 0.75);
       color: var(--white);
     }
 
-    .button:hover {
-      opacity: 0.9;
-    }
-
-    /* General sections */
-
     section {
-      padding: 70px 0;
-      scroll-margin-top: 130px;
+      padding: 78px 0;
+      scroll-margin-top: 145px;
     }
 
     .section-heading {
-      margin: 0 0 16px;
-      font-size: clamp(2rem, 4vw, 2.7rem);
-      line-height: 1.2;
+      margin: 0 0 12px;
+      font-size: clamp(2.6rem, 5vw, 4rem);
+      line-height: 1.1;
     }
 
     .section-intro {
-      max-width: 900px;
+      max-width: 1050px;
       margin: 0;
-      color: var(--muted);
+      color: var(--white);
       font-size: 1.05rem;
+      line-height: 1.7;
     }
-
-    /* About and bios */
 
     .about-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 26px;
-      margin-top: 35px;
-      align-items: start;
-    }
-
-    .card {
-      padding: 28px;
-      border: 1px solid var(--card-border);
-      border-radius: 18px;
-      background: var(--card);
-      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
-    }
-
-    .bio-header {
-      display: flex;
-      align-items: center;
       gap: 24px;
-      margin-bottom: 24px;
+      margin-top: 30px;
+      align-items: stretch;
     }
 
-    .bio-headshot {
-      width: 185px;
-      height: 235px;
-      flex-shrink: 0;
+    .bio-card {
+      display: grid;
+      grid-template-columns: 220px minmax(0, 1fr);
+      gap: 24px;
+      align-items: start;
+      padding: 24px;
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      background: var(--card);
+    }
+
+    .bio-photo {
+      width: 220px;
+      height: 345px;
       display: block;
-      border: 4px solid var(--gold);
-      border-radius: 14px;
+      border: 3px solid var(--gold);
+      border-radius: 12px;
       object-fit: cover;
       object-position: center top;
-      background: var(--navy-light);
+      background: var(--navy-dark);
     }
 
     .bio-name {
-      margin: 0 0 6px;
-      font-size: 1.55rem;
-      line-height: 1.2;
+      margin: 10px 0 8px;
+      font-size: 1.65rem;
+      line-height: 1.15;
     }
 
     .bio-role {
-      margin: 0;
+      margin: 0 0 20px;
       color: var(--gold);
+      font-size: 1.05rem;
       font-weight: 800;
       line-height: 1.4;
     }
 
-    .card p:last-child {
-      margin-bottom: 0;
+    .bio-content p {
+      margin: 0 0 14px;
+      font-size: 0.98rem;
+      line-height: 1.5;
     }
-
-    /* Services */
 
     .services {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 22px;
-      margin-top: 35px;
+      margin-top: 34px;
+    }
+
+    .service-card,
+    .contact-form,
+    .contact-details {
+      padding: 28px;
+      border: 1px solid var(--card-border);
+      border-radius: 14px;
+      background: var(--card);
     }
 
     .service-card h3 {
-      margin: 0 0 10px;
-      font-size: 1.25rem;
+      margin: 0 0 12px;
+      font-size: 1.3rem;
     }
 
-    .service-card p {
+    .service-card p,
+    .contact-details p {
       margin: 0;
       color: var(--muted);
     }
-
-    /* Approach */
 
     .approach-box {
       margin-top: 28px;
       padding: 34px;
       border-left: 5px solid var(--gold);
-      border-radius: 14px;
+      border-radius: 12px;
       background: var(--card);
     }
 
@@ -294,22 +265,12 @@
       font-size: 1.08rem;
     }
 
-    /* Contact */
-
     .contact-grid {
       display: grid;
-      grid-template-columns: 1.6fr 0.8fr;
-      gap: 30px;
-      margin-top: 35px;
+      grid-template-columns: 1.5fr 0.8fr;
+      gap: 28px;
+      margin-top: 34px;
       align-items: start;
-    }
-
-    .contact-form,
-    .contact-details {
-      padding: 28px;
-      border: 1px solid var(--card-border);
-      border-radius: 18px;
-      background: var(--card);
     }
 
     .contact-form label {
@@ -323,9 +284,9 @@
       width: 100%;
       margin-bottom: 17px;
       padding: 13px 14px;
-      border: 1px solid rgba(255, 255, 255, 0.16);
-      border-radius: 10px;
-      background: #ffffff;
+      border: 1px solid #d1d5db;
+      border-radius: 9px;
+      background: white;
       color: #111827;
       font-family: Arial, Helvetica, sans-serif;
       font-size: 1rem;
@@ -337,9 +298,9 @@
     }
 
     .contact-form button {
-      padding: 13px 22px;
+      padding: 13px 23px;
       border: none;
-      border-radius: 10px;
+      border-radius: 9px;
       background: var(--gold);
       color: #111827;
       font-size: 1rem;
@@ -347,17 +308,7 @@
       cursor: pointer;
     }
 
-    .contact-form button:hover {
-      opacity: 0.9;
-    }
-
-    .contact-details h3 {
-      margin-top: 0;
-    }
-
-    .contact-details p {
-      color: var(--muted);
-    }
+    .contact-details h3 { margin-top: 0; }
 
     .contact-details a {
       color: var(--gold);
@@ -366,103 +317,76 @@
       overflow-wrap: anywhere;
     }
 
-    .contact-details a:hover {
-      text-decoration: underline;
-    }
-
-    /* Footer */
-
     footer {
-      padding: 30px 0;
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 32px 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
       color: var(--muted);
       text-align: center;
     }
 
-    /* Responsive design */
-
-    @media (max-width: 1080px) {
-      .bio-header {
-        flex-direction: column;
-        text-align: center;
-      }
+    @media (max-width: 1120px) {
+      .bio-card { grid-template-columns: 190px minmax(0, 1fr); }
+      .bio-photo { width: 190px; height: 300px; }
     }
 
-    @media (max-width: 950px) {
+    @media (max-width: 980px) {
+      .header-inner {
+        flex-direction: column;
+        padding: 16px 0;
+      }
+
+      .nav-links {
+        justify-content: center;
+        gap: 22px;
+      }
+
       .about-grid,
       .services,
       .contact-grid {
         grid-template-columns: 1fr;
       }
 
-      .bio-header {
-        flex-direction: row;
-        text-align: left;
-      }
+      .bio-card { grid-template-columns: 220px minmax(0, 1fr); }
+      .bio-photo { width: 220px; height: 345px; }
     }
 
-    @media (max-width: 780px) {
-      .nav-inner {
-        flex-direction: column;
+    @media (max-width: 680px) {
+      .logo-box {
+        width: 235px;
+        height: 95px;
       }
 
       .nav-links {
-        justify-content: center;
-        text-align: center;
-      }
-
-      .brand-logo {
-        width: 240px;
-        height: 90px;
-      }
-
-      .hero {
-        padding: 70px 0 65px;
-      }
-
-      .bio-header {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .bio-headshot {
-        width: 175px;
-        height: 220px;
-      }
-    }
-
-    @media (max-width: 520px) {
-      .nav-links {
-        gap: 12px;
+        gap: 15px;
       }
 
       .nav-links a {
         font-size: 0.92rem;
       }
 
+      .hero {
+        padding: 70px 0 75px;
+      }
+
+      .bio-card {
+        grid-template-columns: 1fr;
+      }
+
+      .bio-photo {
+        width: min(100%, 280px);
+        height: auto;
+        aspect-ratio: 185 / 235;
+        margin: 0 auto;
+      }
+
+      .bio-name,
+      .bio-role {
+        text-align: center;
+      }
+
       .hero-buttons {
         flex-direction: column;
         align-items: flex-start;
-      }
-
-      .card,
-      .contact-form,
-      .contact-details {
-        padding: 21px;
-      }
-
-      section {
-        padding: 55px 0;
-      }
-
-      .brand-logo {
-        width: 215px;
-        height: 82px;
-      }
-
-      .bio-headshot {
-        width: 165px;
-        height: 210px;
       }
     }
   </style>
@@ -470,38 +394,21 @@
 
 <body>
 
-  <header class="nav">
-    <div class="wrap nav-inner">
-
-      <a
-        href="#top"
-        class="logo-link"
-        aria-label="BeaconForge Solutions home"
-      >
-        <img
-          src="./logo.png"
-          class="brand-logo"
-          alt="BeaconForge Solutions logo"
-        >
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a href="#top" class="logo-link" aria-label="BeaconForge Solutions home">
+        <span class="logo-box">
+          <img src="./logo.png" alt="BeaconForge Solutions logo">
+        </span>
       </a>
 
-      <nav
-        class="nav-links"
-        aria-label="Main navigation"
-      >
+      <nav class="nav-links" aria-label="Main navigation">
         <a href="#about">About</a>
         <a href="#services">Services</a>
         <a href="#approach">Approach</a>
         <a href="#contact">Contact</a>
-
-        <a
-          href="#contact"
-          class="nav-cta"
-        >
-          Start a Conversation
-        </a>
+        <a href="#contact" class="nav-cta">Start a Conversation</a>
       </nav>
-
     </div>
   </header>
 
@@ -509,197 +416,129 @@
 
     <section class="hero">
       <div class="wrap hero-content">
+        <p class="eyebrow">Strategy. Implementation. Impact.</p>
 
-        <p class="eyebrow">
-          Strategy. Implementation. Impact.
-        </p>
-
-        <h1>
-          Higher education consulting built to move good ideas into action.
-        </h1>
+        <h1>Higher education consulting built to move good ideas into action.</h1>
 
         <p>
-          BeaconForge Solutions helps colleges, universities, and
-          mission-driven organizations strengthen strategy, improve
-          operations, and build programs that drive results.
+          BeaconForge Solutions helps colleges, universities, and mission-driven
+          organizations strengthen strategy, improve operations, and build programs
+          that drive results.
         </p>
 
         <div class="hero-buttons">
-
-          <a
-            href="#contact"
-            class="button button-primary"
-          >
-            Contact Us
-          </a>
-
-          <a
-            href="#services"
-            class="button button-secondary"
-          >
-            Explore Services
-          </a>
-
+          <a href="#contact" class="button button-primary">Contact Us</a>
+          <a href="#services" class="button button-secondary">Explore Services</a>
         </div>
-
       </div>
     </section>
 
     <section id="about">
       <div class="wrap">
-
-        <h2 class="section-heading">
-          About
-        </h2>
+        <h2 class="section-heading">About</h2>
 
         <p class="section-intro">
-          BeaconForge Solutions brings together deep experience in higher
-          education, student success, workforce development, strategic
-          planning, and program execution. We help institutions and
-          organizations move from ideas to implementation with practical,
-          results-oriented support.
+          BeaconForge Solutions brings together deep experience in higher education,
+          student success, workforce development, strategic planning, and program
+          execution. We help institutions and organizations move from ideas to
+          implementation with practical, results-oriented support.
         </p>
 
         <div class="about-grid">
 
-          <article class="card">
+          <article class="bio-card">
+            <img
+              src="./JamaalHeadshotSharp.webp"
+              alt="Jamaal Jackson"
+              class="bio-photo"
+              width="740"
+              height="940"
+            >
 
-            <div class="bio-header">
+            <div class="bio-content">
+              <h3 class="bio-name">Jamaal Jackson, EdD</h3>
+              <p class="bio-role">Co-Founder and Principal Consultant</p>
 
-              <img
-                src="./JJacksonHeadshot.png"
-                alt="Jamaal Jackson"
-                class="bio-headshot"
-              >
+              <p>
+                Jamaal Jackson is a transformational leader with more than 20 years
+                of experience across higher education, intercollegiate athletics,
+                and institutional leadership. His career spans coaching, teaching,
+                and administration across multiple institutions, providing a
+                comprehensive understanding of how to drive performance, build
+                systems, and lead organizations through change.
+              </p>
 
-              <div>
-                <h3 class="bio-name">
-                  Jamaal Jackson, EdD
-                </h3>
+              <p>
+                A proven strategist and builder, Jamaal has generated over $1 million
+                in funding through grants, partnerships, and external engagement
+                efforts. His leadership is defined by his ability to translate vision
+                into execution—developing programs, strengthening operations, and
+                creating sustainable pathways that improve student success and
+                organizational outcomes.
+              </p>
 
-                <p class="bio-role">
-                  Co-Founder and Principal Consultant
-                </p>
-              </div>
+              <p>
+                Jamaal’s work focuses on designing scalable solutions that align
+                education with workforce needs while enhancing institutional
+                effectiveness. He has presented and consulted nationally and
+                internationally on student success, leadership development, and
+                program innovation.
+              </p>
 
+              <p>
+                He holds a Doctor of Education in Adult and Higher Education
+                Leadership from Morehead State University, a Master of Public
+                Administration in Human Resource Management and a Bachelor of Arts
+                in Physical Education from Kentucky State University, and a Master
+                of Arts in Teaching in Physical Education from the University of
+                West Alabama.
+              </p>
             </div>
-
-            <p>
-              Jamaal Jackson is a transformational leader with more than
-              20 years of experience across higher education,
-              intercollegiate athletics, and institutional leadership.
-              His career spans coaching, teaching, and administration
-              across multiple institutions, providing a comprehensive
-              understanding of how to drive performance, build systems,
-              and lead organizations through change.
-            </p>
-
-            <p>
-              A proven strategist and builder, Jamaal has generated over
-              $1 million in funding through grants, partnerships, and
-              external engagement efforts. His leadership is defined by
-              his ability to translate vision into execution—developing
-              programs, strengthening operations, and creating sustainable
-              pathways that improve student success and organizational
-              outcomes.
-            </p>
-
-            <p>
-              Jamaal’s work focuses on designing scalable solutions that
-              align education with workforce needs while enhancing
-              institutional effectiveness. He has presented and consulted
-              nationally and internationally on student success,
-              leadership development, and program innovation, and has
-              been nationally recognized and awarded for his
-              contributions to higher education.
-            </p>
-
-            <p>
-              He holds a Doctor of Education in Adult and Higher
-              Education Leadership from Morehead State University, a
-              Master of Public Administration in Human Resource
-              Management and a Bachelor of Arts in Physical Education
-              from Kentucky State University, and a Master of Arts in
-              Teaching in Physical Education from the University of West
-              Alabama.
-            </p>
-
-            <p>
-              He is a trained fundraiser through the NCAA Foundations of
-              Fundraising Program delivered by the Indiana University
-              Lilly Family School of Philanthropy. Jamaal is also a
-              Higher Education Leadership Foundation Fellow, an American
-              Association of State Colleges and Universities Emerging
-              Leader, and holds certification in Diversity, Equity, and
-              Inclusion in the Workplace from the University of South
-              Florida Muma College of Business.
-            </p>
-
           </article>
 
-          <article class="card">
+          <article class="bio-card">
+            <img
+              src="./MaryHeadshotSharp.webp"
+              alt="Mary Jackson"
+              class="bio-photo"
+              width="740"
+              height="940"
+            >
 
-            <div class="bio-header">
+            <div class="bio-content">
+              <h3 class="bio-name">Mary Jackson</h3>
+              <p class="bio-role">Co-Founder and Principal Consultant</p>
 
-              <img
-                src="./MJacksonHeadshot.png"
-                alt="Mary Jackson"
-                class="bio-headshot"
-              >
+              <p>
+                Mary Jackson is a higher education professional and trained
+                practitioner with two decades of experience advancing student
+                success, workforce development, and institutional effectiveness.
+                Her work focuses on building stronger connections between education
+                and employment, ensuring that students are prepared to succeed in
+                today’s evolving workforce.
+              </p>
 
-              <div>
-                <h3 class="bio-name">
-                  Mary Jackson
-                </h3>
+              <p>
+                She brings experience across enrollment management, scholarship
+                programming, college access, and student success initiatives, as
+                well as service as a faculty member. She leads and supports
+                initiatives that strengthen career services, employer engagement,
+                and workforce alignment across institutions.
+              </p>
 
-                <p class="bio-role">
-                  Co-Founder and Principal Consultant
-                </p>
-              </div>
+              <p>
+                Mary is known for her ability to turn strategy into action,
+                designing and supporting initiatives that are practical, scalable,
+                and results-oriented. She has experience working across institutions
+                and stakeholder groups to improve systems, enhance collaboration,
+                and expand opportunities for students.
+              </p>
 
+              <p>
+                She holds a Bachelor of Arts in Communication from Berea College
+                and a Master of Music from Eastern Kentucky University.
+              </p>
             </div>
-
-            <p>
-              Mary Jackson is a higher education professional and trained
-              practitioner with two decades of experience advancing
-              student success, workforce development, and institutional
-              effectiveness. Her work focuses on building stronger
-              connections between education and employment, ensuring
-              that students are prepared to succeed in today’s evolving
-              workforce.
-            </p>
-
-            <p>
-              She brings experience across enrollment management,
-              scholarship programming, college access, and student
-              success initiatives, as well as service as a faculty
-              member. She leads and supports initiatives that strengthen
-              career services, employer engagement, and workforce
-              alignment across institutions.
-            </p>
-
-            <p>
-              Mary is known for her ability to turn strategy into action,
-              designing and supporting initiatives that are practical,
-              scalable, and results-oriented. She has experience working
-              across institutions and stakeholder groups to improve
-              systems, enhance collaboration, and expand opportunities
-              for students.
-            </p>
-
-            <p>
-              Her work is grounded in a commitment to access, equity, and
-              outcomes, with a focus on ensuring students not only enroll
-              and persist, but graduate with clear pathways to meaningful
-              careers.
-            </p>
-
-            <p>
-              She holds a Bachelor of Arts in Communication from Berea
-              College and a Master of Music from Eastern Kentucky
-              University.
-            </p>
-
           </article>
 
         </div>
@@ -708,62 +547,35 @@
 
     <section id="services">
       <div class="wrap">
-
-        <h2 class="section-heading">
-          What We Do
-        </h2>
+        <h2 class="section-heading">What We Do</h2>
 
         <p class="section-intro">
-          BeaconForge Solutions supports institutions and organizations
-          that need strategic direction, stronger systems, and practical
-          implementation support.
+          BeaconForge Solutions supports institutions and organizations that need
+          strategic direction, stronger systems, and practical implementation support.
         </p>
 
         <div class="services">
-
-          <article class="card service-card">
-            <h3>
-              Higher Education Consulting
-            </h3>
-
-            <p>
-              Strategic support for colleges and universities navigating
-              institutional growth, change, and new opportunities.
-            </p>
+          <article class="service-card">
+            <h3>Higher Education Consulting</h3>
+            <p>Strategic support for colleges and universities navigating institutional growth, change, and new opportunities.</p>
           </article>
 
-          <article class="card service-card">
-            <h3>
-              Strategic Planning &amp; Program Development
-            </h3>
-
-            <p>
-              Design initiatives that are aligned with institutional
-              priorities, measurable, practical, and sustainable.
-            </p>
+          <article class="service-card">
+            <h3>Strategic Planning &amp; Program Development</h3>
+            <p>Design initiatives aligned with institutional priorities that are measurable, practical, and sustainable.</p>
           </article>
 
-          <article class="card service-card">
-            <h3>
-              Operational &amp; Student Success Solutions
-            </h3>
-
-            <p>
-              Improve workflows, systems, collaboration, and execution
-              across teams and organizational units.
-            </p>
+          <article class="service-card">
+            <h3>Operational &amp; Student Success Solutions</h3>
+            <p>Improve workflows, systems, collaboration, and execution across teams and organizational units.</p>
           </article>
-
         </div>
       </div>
     </section>
 
     <section id="approach">
       <div class="wrap">
-
-        <h2 class="section-heading">
-          Our Approach
-        </h2>
+        <h2 class="section-heading">Our Approach</h2>
 
         <p class="section-intro">
           We combine strategic clarity with hands-on execution.
@@ -776,75 +588,35 @@
             that creates measurable and sustainable impact.
           </p>
         </div>
-
       </div>
     </section>
 
     <section id="contact">
       <div class="wrap">
-
-        <h2 class="section-heading">
-          Start the Conversation
-        </h2>
+        <h2 class="section-heading">Start the Conversation</h2>
 
         <p class="section-intro">
-          Tell us about your institution, organization, or project and
-          how BeaconForge Solutions can help.
+          Tell us about your institution, organization, or project and how
+          BeaconForge Solutions can help.
         </p>
 
         <div class="contact-grid">
-
           <form
             class="contact-form"
             action="https://formspree.io/f/xreonzlr"
             method="POST"
           >
+            <label for="name">Your Name</label>
+            <input id="name" type="text" name="name" required>
 
-            <label for="name">
-              Your Name
-            </label>
+            <label for="email">Your Email</label>
+            <input id="email" type="email" name="email" required>
 
-            <input
-              id="name"
-              type="text"
-              name="name"
-              placeholder="Enter your name"
-              required
-            >
+            <label for="subject">Subject</label>
+            <input id="subject" type="text" name="subject">
 
-            <label for="email">
-              Your Email
-            </label>
-
-            <input
-              id="email"
-              type="email"
-              name="email"
-              placeholder="Enter your email address"
-              required
-            >
-
-            <label for="subject">
-              Subject
-            </label>
-
-            <input
-              id="subject"
-              type="text"
-              name="subject"
-              placeholder="What would you like to discuss?"
-            >
-
-            <label for="message">
-              Message
-            </label>
-
-            <textarea
-              id="message"
-              name="message"
-              placeholder="How can we help?"
-              required
-            ></textarea>
+            <label for="message">Message</label>
+            <textarea id="message" name="message" required></textarea>
 
             <input
               type="hidden"
@@ -852,17 +624,11 @@
               value="New BeaconForge Solutions Inquiry"
             >
 
-            <button type="submit">
-              Send Message
-            </button>
-
+            <button type="submit">Send Message</button>
           </form>
 
           <aside class="contact-details">
-
-            <h3>
-              Contact BeaconForge Solutions
-            </h3>
+            <h3>Contact BeaconForge Solutions</h3>
 
             <p>
               Reach out to discuss consulting, strategic planning,
@@ -871,14 +637,11 @@
 
             <p>
               <strong>Email</strong><br>
-
               <a href="mailto:info@beaconforgesolutions.com">
                 info@beaconforgesolutions.com
               </a>
             </p>
-
           </aside>
-
         </div>
       </div>
     </section>
